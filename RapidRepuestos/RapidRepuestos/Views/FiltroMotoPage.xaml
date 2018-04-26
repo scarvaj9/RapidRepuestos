@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RapidRepuestos.Views.FiltroMotoPage">
+    <ContentPage.Content>
+        <StackLayout
+            Padding="10,20,10,5">
+            
+            <Label Text="Rapid"
+                   TextColor="Blue"
+                   FontSize="40"
+                   />
+            <Label Text="Repuestos"
+                   TextColor="Blue"
+                   FontSize="40"
+                   />
+            
+            <Label Text="Marca"
+                   TextColor="Black"
+                   FontSize="30"
+                   />
+            <Entry 
+                Placeholder="Auteco">
+               
+            </Entry>
+
+            
+            
+            <Label Text="Tipo"
+                   TextColor="Black"
+                   FontSize="30"
+                   />
+            
+            <Entry 
+                Placeholder="Street">
+
+            </Entry>
+           
+            
+            <Label Text="Moto"
+                   TextColor="Black"
+                   FontSize="30"
+                   />
+
+            <Entry 
+                Placeholder="Pulsar">
+            </Entry>
+
+            <Button
+                Text="Buscar"
+                TextColor="White"
+                BackgroundColor="Blue"
+                BorderRadius="20">
+                
+            </Button>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
