@@ -4,7 +4,8 @@
              x:Class="RapidRepuestos.Views.FiltroMotoPage"
              BindingContext="{Binding Main, Source={StaticResource Locator}}">
     <ContentPage.Content>
-        <ScrollView>
+        <ScrollView
+            BindingContext="{Binding Filtrar}">
             <StackLayout
                 Padding="10,20,10,5">
 
@@ -16,13 +17,19 @@
                        TextColor="Blue"
                        FontSize="40"
                        />
-
+                <Switch
+                        IsToggled="{Binding Prueba, Mode=TwoWay}">
+                    
+                </Switch>
                 <Label Text="Marca"
                        TextColor="Black"
                        FontSize="30"
                        />
+               
+                
                 <Entry 
-                    Placeholder="Ejemplo Auteco">
+                    Placeholder="Ejemplo Auteco"
+                    Text="{Binding MarcaMoto, Mode=TwoWay}">
 
                 </Entry>
 
@@ -34,7 +41,8 @@
                        />
 
                 <Entry 
-                    Placeholder="Ejemplo Street">
+                    Placeholder="Ejemplo Street"
+                    Text="{Binding TipoMoto, Mode=TwoWay}">
 
                 </Entry>
 
@@ -45,10 +53,13 @@
                        />
 
                 <Entry 
-                    Placeholder="Ejemplo Pulsar">
+                    Placeholder="Ejemplo Pulsar"
+                    Text="{Binding MotoExacta, Mode=TwoWay}">
+                    
                 </Entry>
 
                 <Button
+                    Command="{Binding BuscarMoto}"
                     Text="Buscar"
                     TextColor="White"
                     BackgroundColor="Blue"
