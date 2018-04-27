@@ -10,7 +10,7 @@
 		{
 			InitializeComponent();
 
-            this.MainPage = new FiltroMotoPage();
+            this.MainPage = new NavigationPage(new FiltroMotoPage());
 		}
 
 

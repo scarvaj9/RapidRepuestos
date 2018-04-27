@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RapidRepuestos.Views.FiltrarRepuestoPage"
+              BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             Title="Buscar Repuesto">
+    <ContentPage.Content>
+        <ScrollView
+            BindingContext="{Binding Repuesto}">
+            <StackLayout
+                Padding="10,20,10,5">
+
+                <Label Text="Rapid"
+                       TextColor="Blue"
+                       FontSize="40"
+                       />
+                <Label Text="Repuestos"
+                       TextColor="Blue"
+                       FontSize="40"
+                       />
+
+                <Label Text="Que repuesto necesitas?"
+                       TextColor="Black"
+                       FontSize="30"
+                       />
+
+
+                <Entry 
+                    Placeholder="Ejemplo piston"
+                    Text="{Binding Repuesto, Mode=TwoWay}">
+
+                </Entry>
+
+
+
+                <Button
+                    Command="{Binding BuscarRepuesto}"
+                    Text="Buscar"
+                    TextColor="White"
+                    BackgroundColor="Blue"
+                    BorderRadius="20">
+
+
+                </Button>
+
+            </StackLayout>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

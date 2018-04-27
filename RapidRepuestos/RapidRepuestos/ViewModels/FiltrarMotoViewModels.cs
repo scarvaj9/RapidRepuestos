@@ -3,13 +3,12 @@
 namespace RapidRepuestos.ViewModels
 {
     using GalaSoft.MvvmLight.Command;
-    using System;
-    using System.ComponentModel;
+    using Views;
     using System.Windows.Input;
     using Xamarin.Forms;
 
     public class FiltrarMotoViewModels
-    {     
+    {
 
 
         //propiedades de filtrar moto que vienen de filtromotopage
@@ -23,6 +22,7 @@ namespace RapidRepuestos.ViewModels
         public string MotoExacta { get; set; }
 
 
+
         // aca vamos a poner los constructores 
         public FiltrarMotoViewModels()
         {
@@ -31,15 +31,16 @@ namespace RapidRepuestos.ViewModels
         }
 
         // los botones o commands los ponemos por aparte pero tambien son propiedades
-        public ICommand BuscarMoto {
+        public ICommand BuscarMoto
+        {
             get
             {
                 return new RelayCommand(Buscar);
             }
         }
 
-        
-        
+
+
         private async void Buscar()
         {
             if (string.IsNullOrEmpty(this.MarcaMoto))
@@ -68,12 +69,12 @@ namespace RapidRepuestos.ViewModels
                     "Aceptar");
                 return;
             }
-
-
+            MainViewModels.GetInstance().Repuesto = new FiltrarRepuestoViewModels();
+            await Application.Current.MainPage.Navigation.PushAsync(new FiltrarRepuestoPage());
 
         }
 
-       
-        
+
+
     }
 }
