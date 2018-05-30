@@ -1,0 +1,32 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RapidRepuestos.Views.ListaTiendas1Page"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             Title="Lista Tienda">
+    <ContentPage.Content>
+        <ScrollView
+            BindingContext="{Binding Tienda1}">
+            <StackLayout
+                Padding="10,20,10,5">
+
+                <Label Text="Rapid"
+                       TextColor="Blue"
+                       FontSize="40"
+                       />
+                <Label Text="Repuestos"
+                       TextColor="Blue"
+                       FontSize="40"
+                       />
+                <Label Text="Cadena"
+                       TextColor="Black"
+                       FontSize="30"
+                       />
+
+                <Image
+                    Source="lista">
+                </Image>
+            </StackLayout>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

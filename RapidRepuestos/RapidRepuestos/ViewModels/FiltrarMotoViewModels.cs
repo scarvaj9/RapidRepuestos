@@ -13,7 +13,6 @@ namespace RapidRepuestos.ViewModels
 
         //propiedades de filtrar moto que vienen de filtromotopage
 
-        public bool Prueba { get; set; }
 
         public string MarcaMoto { get; set; }
 
@@ -26,7 +25,7 @@ namespace RapidRepuestos.ViewModels
         // aca vamos a poner los constructores 
         public FiltrarMotoViewModels()
         {
-            this.Prueba = true;
+          
 
         }
 
@@ -43,34 +42,53 @@ namespace RapidRepuestos.ViewModels
 
         private async void Buscar()
         {
-            if (string.IsNullOrEmpty(this.MarcaMoto))
+            if (string.IsNullOrEmpty(this.MarcaMoto) || string.IsNullOrEmpty(this.TipoMoto) || string.IsNullOrEmpty(this.MotoExacta))
             {
                 await Application.Current.MainPage.DisplayAlert(
                     "Error",
-                    "no ingreso la marca de la moto",
+                    "campo no diligenciado",
                     "Aceptar");
                 return;
             }
 
-            if (string.IsNullOrEmpty(this.TipoMoto))
+            if (MarcaMoto == "auteco")
             {
-                await Application.Current.MainPage.DisplayAlert(
-                    "Error",
-                    "no ingreso el tipo de moto",
-                    "Aceptar");
-                return;
-            }
+                if (TipoMoto == "street")
+                {
+                    if (MotoExacta == "pulsar")
+                    {
+                        MainViewModels.GetInstance().Repuesto = new FiltrarRepuestoViewModels();
+                        await Application.Current.MainPage.Navigation.PushAsync(new FiltrarRepuestoPage());
 
-            if (string.IsNullOrEmpty(this.MotoExacta))
-            {
-                await Application.Current.MainPage.DisplayAlert(
-                    "Error",
-                    "no ingreso el nombre de la moto ",
-                    "Aceptar");
-                return;
+                    }
+                    else
+                    {
+                        await Application.Current.MainPage.DisplayAlert(
+                 "Error",
+                 "moto no encontrada ",
+                 "Aceptar");
+                        return;
+                    }
+
+
+                }
+                else
+                {
+                    await Application.Current.MainPage.DisplayAlert(
+                 "Error",
+                 "tipo no encontrado ",
+                 "Aceptar");
+                    return;
+                }
+
             }
-            MainViewModels.GetInstance().Repuesto = new FiltrarRepuestoViewModels();
-            await Application.Current.MainPage.Navigation.PushAsync(new FiltrarRepuestoPage());
+            else { await Application.Current.MainPage.DisplayAlert(
+                   "Error",
+                   "marca no encontrada ",
+                   "Aceptar");
+            return;}
+            
+           
 
         }
 

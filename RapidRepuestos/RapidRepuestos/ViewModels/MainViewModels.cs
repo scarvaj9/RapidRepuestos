@@ -7,6 +7,10 @@
 
         public FiltrarRepuestoViewModels Repuesto { get; set; }
 
+        public ListarTiendaViewModels Tienda { get; set; }
+
+        public ListarTienda1ViewModels Tienda1 { get; set; }
+
         public MainViewModels()
         {
             instance = this;
@@ -17,7 +21,7 @@
         // se hace un singleton para evitar instanciar varias veces la principal class 
 
         private static MainViewModels instance;
-
+       
         public static MainViewModels GetInstance()
         {
             if (instance == null)
@@ -27,6 +31,6 @@
 
             return instance;
         }
-    }   
+    }
 
 }
