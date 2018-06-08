@@ -9,7 +9,7 @@
 
         public ListarTiendaViewModels Tienda { get; set; }
 
-        public ListarTienda1ViewModels Tienda1 { get; set; }
+        
 
         public MainViewModels()
         {

@@ -2,9 +2,11 @@
 namespace RapidRepuestos.ViewModels
 {
     using System;
+    using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using Models;
     using Services;
+    using Xamarin.Forms;
 
     public class ListarTiendaViewModels
     {
@@ -41,6 +43,18 @@ namespace RapidRepuestos.ViewModels
                 "https://storerepuestos.myshopify.com",
                 "/admin",
                 "/products.json");
+
+            if (!response.IsSuccess)
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                    "Error",
+                    response.Message,
+                    "Accept");
+                return;
+            }
+            var list = (List<Repuesto>)response.Result;
+            this.Repuesto = new ObservableCollection<Repuesto>(list);
+            
         }
     }
 }

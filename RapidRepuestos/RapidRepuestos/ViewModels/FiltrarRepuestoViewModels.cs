@@ -8,7 +8,7 @@
     public class FiltrarRepuestoViewModels
     {
 
-        public string Repuesto { get; set; }
+        public string FiltrarRepuesto { get; set; }
 
 
         public FiltrarRepuestoViewModels()
@@ -32,7 +32,7 @@
         {
 
 
-            if (string.IsNullOrEmpty(this.Repuesto))
+            if (string.IsNullOrEmpty(this.FiltrarRepuesto))
             {
                 await Application.Current.MainPage.DisplayAlert(
                     "Error",
@@ -41,7 +41,7 @@
 
             }
 
-            if (Repuesto == "piston")
+            if (FiltrarRepuesto == "piston")
             {
 
                 MainViewModels.GetInstance().Tienda = new ListarTiendaViewModels();
@@ -49,14 +49,7 @@
 
             }
 
-            if (Repuesto == "cadena")
-            {
-
-                MainViewModels.GetInstance().Tienda1 = new ListarTienda1ViewModels();
-                await Application.Current.MainPage.Navigation.PushAsync(new ListaTiendas1Page());
-
-            }
-            
+           
         }
 
     }

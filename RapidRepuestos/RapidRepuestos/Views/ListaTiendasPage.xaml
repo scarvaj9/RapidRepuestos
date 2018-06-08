@@ -5,30 +5,13 @@
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              Title="Lista Tiendas">
     <ContentPage.Content>
-        <ScrollView
-            BindingContext="{Binding Tienda}">
-            <StackLayout
-                Padding="10,20,10,5">
-
-                <Label Text="Rapid"
-                       TextColor="Blue"
-                       FontSize="40"
-                       />
-                <Label Text="Repuestos"
-                       TextColor="Blue"
-                       FontSize="40"
-                       />
-
-                <Label Text="piston"
-                       TextColor="Black"
-                       FontSize="30"
-                       />
-                <Image
-                    Source="lista2">
-                </Image>
+        <StackLayout
+            BindingContext="{Binding Tienda}"
+            Padding="5">
+            <ListView
+               ItemsSource="{Binding Repuesto}">
+            </ListView>
 
             </StackLayout>
-        </ScrollView>
-
     </ContentPage.Content>
 </ContentPage>
