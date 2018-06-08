@@ -40,6 +40,8 @@ namespace RapidRepuestos.ViewModels
 
 
 
+
+
         private async void Buscar()
         {
             if (string.IsNullOrEmpty(this.MarcaMoto) || string.IsNullOrEmpty(this.TipoMoto) || string.IsNullOrEmpty(this.MotoExacta))
